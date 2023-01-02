@@ -27,7 +27,15 @@ def update_todo():
         print_todos(todos)
     except:
         print("task number not available")
-   
+
+def add_todo():
+    todos = get_todos()
+    print_todos(todos)
+    todo = input('Enter a todo: ').strip()
+    todos.append(todo)
+    save_todos(todos)
+    print_todos(todos)    
+
 def delete_todo():
     todos = get_todos()
     print_todos(todos)
@@ -42,12 +50,7 @@ while True:
 
     match user_action:
         case '1':
-            todos = get_todos()
-            print_todos(todos)
-            todo = input('Enter a todo: ').strip()
-            todos.append(todo)
-            save_todos(todos)
-            print_todos(todos)
+            add_todo()
         case '2':
             update_todo()  
         case '3':
