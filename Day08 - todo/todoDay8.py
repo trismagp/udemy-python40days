@@ -37,11 +37,12 @@ def add_todo():
 def delete_todo():
     todos = get_todos()
     print_todos(todos)
-    todo_num = input('Choose a todo number to delete: ') 
+    todo_num = input('Choose a todo number to delete: ')
+    removed_todo =  todos[int(todo_num)] 
     del todos[int(todo_num)]
     print_todos(todos)
     save_todos(todos)        
-
+    print(f"Todo {removed_todo} was removed")
 
 while True:
     user_action = input("Pick an action 1.add, 2.update, 3.delete, 4.quit:")
