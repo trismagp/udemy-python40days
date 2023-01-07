@@ -1,18 +1,16 @@
 file_data = 'todos.txt'
 
 def get_todos():
-    file = open(file_data,'r')
-    todos =  file.readlines()
+    with open(file_data,'r') as file:
+        todos =  file.readlines()    
     todos = [t.strip('\n') for t in todos]
-    file.close()
     return todos
 
 def save_todos(todos):
     todos = [t + '\n' for t in todos]
-    file = open(file_data,'w')
-    file.writelines(todos)
-    file.close()
-
+    with open(file_data,'w') as file:
+      file.writelines(todos)
+    
 def print_todos(todos):
     for i in range(len(todos)):
         print(i , ":" , todos[i].strip())
