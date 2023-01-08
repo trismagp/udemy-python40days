@@ -15,11 +15,10 @@ def print_todos(todos):
     for i in range(len(todos)):
         print(i , ":" , todos[i].strip())
 
-def edit_todo(todo_num):
+def edit_todo(new_todo, todo_to_edit):
     try:
         todos = get_todos()
-        print_todos(todos)
-        todos[int(todo_num)] = input('Enter todo change: ').strip()
+        todos[todos.index(todo_to_edit)] = new_todo
         save_todos(todos)
         print_todos(todos)
     except:
