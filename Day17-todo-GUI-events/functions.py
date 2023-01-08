@@ -30,14 +30,11 @@ def add_todo(todo):
     save_todos(todos)
     print_todos(todos)    
 
-def delete_todo(todo_num ):
+def complete_todo(todo_to_complete):
     try:
         todos = get_todos()
-        removed_todo =  todos[int(todo_num)] 
-        del todos[int(todo_num)]
-        print_todos(todos)
-        save_todos(todos)        
-        print(f"Todo {removed_todo} was removed")
+        del todos[todos.index(todo_to_complete)]
+        save_todos(todos)
     except:
         print("task number not available")
 
