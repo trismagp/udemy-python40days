@@ -2,3 +2,6 @@ fun
 cake
 dance
 home
+car
+caron
+fun1
